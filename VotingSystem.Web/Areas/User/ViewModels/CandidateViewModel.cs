@@ -27,6 +27,7 @@
         [HiddenInput(DisplayValue = false)]
         public int VoteCount { get; set; }
 
+        public bool IsChecked { get; set; }
 
         [HiddenInput(DisplayValue = false)]
         public int VoteId { get; set; }
