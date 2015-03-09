@@ -55,11 +55,7 @@ namespace VotingSystem.Web.Areas.User.Controllers
                 this.Data.Candidates.Add(candidateToDb);
                 this.Data.SaveChanges();
 
-                // Each User receive points for a posted source code
-                
-                this.Data.SaveChanges();
-
-                return this.RedirectToAction("All");
+                return this.RedirectToAction("All", new { id = candidate.VoteId });
             }
 
             return this.View(candidate);

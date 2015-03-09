@@ -206,7 +206,9 @@
     <Compile Include="Areas\User\Controllers\ProfileController.cs" />
     <Compile Include="Areas\User\Controllers\VotesController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Areas\User\ViewModels\CandidateInputModel.cs" />
     <Compile Include="Areas\User\ViewModels\CandidateViewModel.cs" />
+    <Compile Include="Areas\User\ViewModels\VoteWithCandidatesInputModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserPollsViewModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserShowProfileViewModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserVotesViewModel.cs" />
@@ -219,6 +221,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Filters\UserNameAllowedSymbolsAtribute.cs" />
     <Compile Include="Infrastructure\Helpers\FileUploader.cs" />
     <Compile Include="Infrastructure\Helpers\KendoGridHelper.cs" />
     <Compile Include="Infrastructure\Mapping\AutoMapperConfig.cs" />
@@ -541,6 +544,20 @@
     <Content Include="Areas\User\Views\Candidates\All.cshtml" />
     <Content Include="Areas\User\Views\Candidates\Add.cshtml" />
     <Content Include="Areas\User\Views\Votes\Vote.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\CandidateInputModel.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Empty.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Areas\User\Views\Shared\EditorTemplates\Url.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\global.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
