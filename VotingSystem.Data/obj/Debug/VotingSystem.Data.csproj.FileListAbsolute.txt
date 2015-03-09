@@ -1,0 +1,64 @@
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll.config
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.pdb
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.pdb
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.xml
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.dll
+C:\Users\Kiko\documents\visual studio 2013\Projects\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.pdb
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll.config
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.pdb
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.pdb
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.xml
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.dll
+C:\Users\Vladislav\Desktop\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.pdb
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll.config
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.pdb
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.pdb
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.xml
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.dll
+C:\Users\Kiko\Desktop\ASP.NET MVC\VotingSystem\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.pdb
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll.config
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Data.pdb
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\VotingSystem.Models.pdb
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.xml
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.csprojResolveAssemblyReference.cache
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.dll
+D:\Github\VotingSystemProject\trunk\VotingSystem\VotingSystem.Data\obj\Debug\VotingSystem.Data.pdb

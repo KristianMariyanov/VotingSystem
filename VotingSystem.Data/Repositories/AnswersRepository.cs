@@ -1,0 +1,24 @@
+﻿namespace VotingSystem.Data.Repositories
+{
+    using System.Linq;
+
+    using VotingSystem.Models;
+
+    class AnswersRepository : GenericRepository<Answer>, IAnswersRepository
+    {
+        public AnswersRepository(IVotingSystemDbContext context) : base (context)
+        {        
+        }
+
+        public IQueryable<Answer> AllByQuestion(int questionId)
+        {
+            return this.context.Answers.Where(c => c.QuestionId == questionId);
+        }
+
+        public IQueryable<Answer> AllInQuestionByVotesCount(int questionId)
+        {
+            return this.AllByQuestion(questionId).OrderBy(v => v.VoteCount);
+        }
+
+    }
+}
