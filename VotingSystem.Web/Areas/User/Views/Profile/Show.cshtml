@@ -1,0 +1,26 @@
+﻿@using VotingSystem.Web.Areas.User.ViewModels
+@model VotingSystem.Web.Areas.User.ViewModels.UserShowProfileViewModel
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>user</h2>
+
+ 
+
+@(Html.Kendo().Grid<UserVotesViewModel>(Model.ActiveVotes)
+    .Name("voteGrid")
+    .Columns(col =>
+        {
+            col.Bound(poll => poll.Id);
+            col.Bound(poll => poll.Title);
+            col.Bound(poll => poll.Description);
+            col.Bound(poll => poll.Author);
+            col.Bound(poll => poll.EndDate);
+
+        })
+        .Sortable()
+        .Pageable()
+        .Filterable()
+        .Groupable())
+

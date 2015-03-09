@@ -1,0 +1,24 @@
+﻿@using Kendo.Mvc.UI
+@using VotingSystem.Web.ViewModels.Votes
+@model List<PublicActiveVotesViewModel>
+@{
+    ViewBag.Title = "All Public Votes";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@(Html.Kendo().Grid(Model)
+    .Name("voteGrid")
+    .Columns(col =>
+        {
+            col.Bound(poll => poll.Id).Hidden();
+            col.Bound(poll => poll.Title);
+            col.Bound(poll => poll.Description);
+            col.Bound(poll => poll.Author);
+            col.Bound(poll => poll.StartDate);
+            col.Bound(poll => poll.EndDate);
+
+        })
+        .Sortable()
+        .Pageable()
+        .Filterable())

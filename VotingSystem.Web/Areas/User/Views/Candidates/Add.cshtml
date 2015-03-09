@@ -1,0 +1,29 @@
+﻿@model VotingSystem.Web.Areas.User.ViewModels.CandidateViewModel
+@{
+    ViewBag.Title = "Add";
+}
+
+@using (Html.BeginForm("Add", "Candidates", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.EditorForModel()
+    <input type="submit" value="submit" />
+}
+
+
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/fileupload")
+<script>
+    $('#register-avatar').fileinput({
+            showUpload: false,
+            allowedFileExtensions: ["jpg", "gif", "png"],
+            previewFileType: "image",
+            removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+            mainClass: "input-group-sm"
+        });
+</script>
+}
+
+
+

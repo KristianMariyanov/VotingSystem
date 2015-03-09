@@ -1,0 +1,63 @@
+﻿@model VotingSystem.Web.ViewModels.Home.IndexViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Voting System</h1>
+    <p class="lead">This is a free voting system that allows creating a Polls and Votes. Pleace Login or Register to Create your own Poll or Vote</p>
+    <p>
+        <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-lg">LogIn &raquo;</a>
+        <a href="@Url.Action("Register", "Account")" class="btn btn-primary btn-lg">Register &raquo;</a>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Last Active Polls</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var poll in Model.ActivePolls)
+                    {
+
+                        <a href="@Url.Action("Details", "Polls", new { id = @poll.Id })" class="list-group-item">
+                            <h5 class="list-group-item-heading">@poll.Title</h5>
+                            <p class="list-group-item-text text-info">
+                                <small>Author: @poll.Author</small>
+                            </p>
+                        </a>
+
+                    }
+                </div>
+            </div>
+            <a class="btn btn-default btn-lg btn-block" href="@Url.Action("All", "Polls")">View All Polls&raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Last Active Votes</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var vote in Model.ActiveVotes)
+                    {
+
+                        <a href="@Url.Action("Details", "Votes", new { id = @vote.Id })" class="list-group-item">
+                            <h5 class="list-group-item-heading">@vote.Title</h5>
+                            <p class="list-group-item-text text-info">
+                                <small>Author: @vote.Author</small>
+                            </p>
+                        </a>
+
+                    }
+                </div>
+            </div>
+            <a class="btn btn-default btn-lg btn-block" href="@Url.Action("All", "Votes")">View All Votes&raquo;</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model List<VotingSystem.Web.Areas.User.ViewModels.CandidateViewModel>
+@{
+    ViewBag.Title = "Vote";
+}
+
+@using (Html.BeginForm("Vote", "Votes", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    foreach (var candidate in Model)
+    {
+        <input type="checkbox" name="cancicates" value="@candidate.Id" id="@candidate.Id"/>
+        <label for="@candidate.Id">
+            <div class="well">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <h2>@candidate.Name</h2>
+                          </div>
+                          <div class="col-md-8">
+                              <p>@candidate.Description</p>
+                          </div>
+                      </div>
+                  </div>
+        </label>
+        
+    }
+    <input type="submit" value="submit"/>
+}
+
