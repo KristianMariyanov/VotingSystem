@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using VotingSystem.Web.Infrastructure.Filters;
 
     public class ExternalLoginConfirmationViewModel
     {
@@ -50,9 +51,8 @@
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -66,7 +66,14 @@
     public class RegisterViewModel
     {
         [Required]
+        [MinLength(3)]
+        [MaxLength(20)]
+        [UserNameAllowedSymbols(ErrorMessage = "Only latin letters, digits and '_' are allowed in the username")]
+        public string Username { get; set; }
+        
+        [Required]
         [EmailAddress]
+        [RegularExpression(@"([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -80,6 +87,11 @@
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [MinLength(3)]
+        [MaxLength(30)]
+        public string Name { get; set; }
     }
 
     public class ResetPasswordViewModel
