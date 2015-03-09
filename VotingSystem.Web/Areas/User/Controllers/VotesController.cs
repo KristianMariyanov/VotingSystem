@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using AutoMapper;
     using AutoMapper.QueryableExtensions;
 
     using Kendo.Mvc.UI;
@@ -32,20 +33,39 @@
         [HttpGet]
         public ActionResult Vote(int Id)
         {
-            var candidates = this.Data
-                .Candidates
-                .AllByVote(Id)
-                .Project()
-                .To<CandidateViewModel>()
-                .ToList();
-            return this.View(candidates);
+            var voteWithCandidates = new VoteWithCandidatesInputModel()
+                                 {
+                                     Title = this.Data.Votes.TitleById(Id),
+                                     Candidates =
+                                         this.Data.Candidates.AllByVote(Id)
+                                         .Project()
+                                         .To<CandidateInputModel>()
+                                 };
+            return this.View(voteWithCandidates);
         }
 
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Vote(string[] cancicates, CandidateViewModel model)
+        public ActionResult Vote(VoteWithCandidatesInputModel model)
         {
+            if (model != null && this.ModelState.IsValid) { 
+                foreach (var candidate in model.Candidates)
+                {
+                    if (candidate.IsChecked)
+                    {
+                        var currentCandidate = this.Data.Candidates.GetById(candidate.Id);
+                        currentCandidate.VoteCount++;
+
+                        this.Data.Candidates.Update(currentCandidate);
+                        this.Data.SaveChanges();
+
+                    }
+                }
+
+                this.RedirectToAction("All", new { id = model.Id });
+            }
+
             return this.View();
         }
 
