@@ -13,7 +13,7 @@
         {
             col.Bound(poll => poll.Id).Hidden();
             col.Bound(poll => poll.Title).Template(@<text>
-                <strong> <a href="/Votes/Details/@item.Id">@item.Title</a></strong>
+                <strong> <a href="/Votes/Vote/@item.Id">@item.Title</a></strong>
             </text>);
             col.Bound(poll => poll.Description);
             col.Bound(poll => poll.Author);
