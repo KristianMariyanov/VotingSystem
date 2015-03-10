@@ -34,7 +34,8 @@
                 new ScriptBundle("~/bundles/jquery").Include("~/Scripts/kendo/jquery.min.js"));
             bundles.Add(
                 new ScriptBundle("~/bundles/global").Include("~/Scripts/global.js"));
-
+            bundles.Add(
+                new ScriptBundle("~/bundles/checkbox").Include("~/Scripts/VoteWithCheckbox.js"));
             bundles.Add(
                 new ScriptBundle("~/bundles/fileupload").Include("~/Scripts/bootstrap-fileinput/fileinput.js"));
 
