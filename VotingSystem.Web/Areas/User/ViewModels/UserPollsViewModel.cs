@@ -1,13 +1,10 @@
 ﻿namespace VotingSystem.Web.Areas.User.ViewModels
 {
     using System;
-    using System.Collections.Generic;
     using System.Web.Mvc;
 
     using VotingSystem.Models;
     using VotingSystem.Web.Infrastructure.Mapping;
-
-    using AutoMapper;
 
     public class UserPollsViewModel : IMapFrom<Poll>, IHaveCustomMappings
     {
@@ -29,7 +26,6 @@
 
         [HiddenInput(DisplayValue = false)]
         public string UserId { get; set; }
-
 
         public void CreateMappings(AutoMapper.IConfiguration configuration)
         {

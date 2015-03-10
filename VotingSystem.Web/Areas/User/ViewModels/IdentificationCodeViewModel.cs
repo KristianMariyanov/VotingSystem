@@ -8,6 +8,5 @@
     public class VoteIdentificationCodeViewModel : IMapFrom<IdentificationCode>
     {
         public int VoteId { get; set; }
-
     }
 }

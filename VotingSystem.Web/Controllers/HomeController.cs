@@ -9,10 +9,10 @@
 
     public class HomeController : BaseController
     {
-
-        public HomeController(IVotingSystemData data) : base (data)
+        public HomeController(IVotingSystemData data) : base(data)
         {
         }
+
         public ActionResult Index()
         {
             var pollCollection = new IndexViewModel()
@@ -49,7 +49,7 @@
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return this.View();
         }
     }
 }

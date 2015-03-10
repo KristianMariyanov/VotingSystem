@@ -7,7 +7,6 @@
 
     public class PublicActivePollsViewModel : IMapFrom<Poll>, IHaveCustomMappings
     {
-
         public int Id { get; set; }
 
         public string Title { get; set; }
@@ -19,7 +18,6 @@
         public DateTime EndDate { get; set; }
 
         public string Author { get; set; }
-
 
         public void CreateMappings(AutoMapper.IConfiguration configuration)
         {

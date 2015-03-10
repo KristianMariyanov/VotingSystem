@@ -560,6 +560,7 @@
     <Content Include="Areas\User\Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Areas\User\Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Areas\User\Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Areas\User\Views\Candidates\Moderate.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\global.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

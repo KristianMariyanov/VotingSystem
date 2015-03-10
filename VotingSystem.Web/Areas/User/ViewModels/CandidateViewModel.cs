@@ -8,7 +8,6 @@
 
     public class CandidateViewModel : IMapFrom<Candidate>
     {
-
         [Key]
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -29,6 +28,5 @@
 
         [HiddenInput(DisplayValue = false)]
         public int VoteId { get; set; }
-
     }
 }

@@ -11,10 +11,11 @@
 
     public class ProfileController : UserBaseController
     {
-
-        public ProfileController(IVotingSystemData data) : base(data)
-        {        
+        public ProfileController(IVotingSystemData data)
+            : base(data)
+        {
         }
+
         // GET: User/Profile
         public ActionResult Show()
         {

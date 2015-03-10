@@ -68,6 +68,7 @@
             {
                 model.Author = firstOrDefault.UserName;
             }
+
             base.Update<Model, ViewModel>(model, model.Id);
             return this.GridOperation(model, request);
         }
@@ -88,7 +89,7 @@
 
         protected override IEnumerable GetData()
         {
-            var data = this.Data.Votes.AllActive().Project().To<ViewModel>();
+            var data = this.Data.Votes.All().Project().To<ViewModel>();
 
             return data;
         }

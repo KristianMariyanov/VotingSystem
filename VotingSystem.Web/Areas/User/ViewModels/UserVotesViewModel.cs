@@ -8,7 +8,6 @@
 
     public class UserVotesViewModel : IMapFrom<Vote>, IHaveCustomMappings
     {
-
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
@@ -31,7 +30,6 @@
 
         [HiddenInput(DisplayValue = false)]
         public string UserId { get; set; }
-
 
         public void CreateMappings(AutoMapper.IConfiguration configuration)
         {

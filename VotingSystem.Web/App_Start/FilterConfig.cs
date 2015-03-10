@@ -1,6 +1,5 @@
 ﻿namespace VotingSystem.Web
 {
-
     using System.Web.Mvc;
 
     public class FilterConfig

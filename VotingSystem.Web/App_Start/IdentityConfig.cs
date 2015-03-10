@@ -1,19 +1,17 @@
-﻿
-
-namespace VotingSystem.Web
+﻿namespace VotingSystem.Web
 {
-    
     using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
 
-    using VotingSystem.Models;
     using VotingSystem.Data;
+    using VotingSystem.Models;
 
     public class EmailService : IIdentityMessageService
     {
@@ -44,6 +42,7 @@ namespace VotingSystem.Web
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             var manager = new ApplicationUserManager(new UserStore<User>(context.Get<VotingSystemDbContext>()));
+
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {
@@ -68,13 +67,17 @@ namespace VotingSystem.Web
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<User>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
-            manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<User>
-            {
-                Subject = "Security Code",
+            manager.RegisterTwoFactorProvider(
+                "Phone Code",
+                new PhoneNumberTokenProvider<User>
+                    {
+                        MessageFormat = "Your security code is {0}"
+                    });
+            manager.RegisterTwoFactorProvider(
+                "Email Code",
+                new EmailTokenProvider<User>
+                    {
+                        Subject = "Security Code",
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
@@ -85,6 +88,7 @@ namespace VotingSystem.Web
                 manager.UserTokenProvider =
                     new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
+
             return manager;
         }
     }

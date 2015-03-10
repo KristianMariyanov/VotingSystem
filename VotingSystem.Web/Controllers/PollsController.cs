@@ -1,21 +1,19 @@
 ﻿namespace VotingSystem.Web.Controllers
 {
-    using System.Web.Mvc;
     using System.Linq;
+    using System.Web.Mvc;
 
     using AutoMapper.QueryableExtensions;
-
-    using Kendo.Mvc.Extensions;
 
     using VotingSystem.Data;
     using VotingSystem.Web.ViewModels.Polls;
 
     public class PollsController : BaseController
     {
-
         public PollsController(IVotingSystemData data) : base(data)
         {
         }
+
         // GET: Polls
         public ActionResult All()
         {
@@ -30,10 +28,9 @@
             return this.View(polls);
         }
 
-        public ActionResult Details(int Id)
+        public ActionResult Details(int id)
         {
-
-            return View();
+            return this.View();
         }
     }
 }

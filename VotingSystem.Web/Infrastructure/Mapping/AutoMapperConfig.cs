@@ -9,12 +9,13 @@
 
     public class AutoMapperConfig
     {
-        private Assembly assembly;
+        private readonly Assembly assembly;
+
         public AutoMapperConfig(Assembly assembly)
         {
-
             this.assembly = assembly;
         }
+
         public void Execute()
         {
             var types = this.assembly.GetExportedTypes();
@@ -54,4 +55,3 @@
         }
     }
 }
-    

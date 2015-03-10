@@ -13,7 +13,6 @@
 
         public string Author { get; set; }
 
-
         public void CreateMappings(AutoMapper.IConfiguration configuration)
         {
             configuration.CreateMap<Poll, IndexPollViewModel>()

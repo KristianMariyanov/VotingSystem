@@ -24,10 +24,8 @@
         // GET: User/Polls
         public ActionResult Show()
         {
-            return View();
+            return this.View();
         }
-
-
 
         [HttpPost]
         public ActionResult Create([DataSourceRequest]DataSourceRequest request, ViewModel model)
@@ -52,6 +50,7 @@
             {
                 model.Author = firstOrDefault.UserName;
             }
+
             base.Update<Model, ViewModel>(model, model.Id);
             return this.GridOperation(model, request);
         }
@@ -73,7 +72,7 @@
         protected override IEnumerable GetData()
         {
             var data = this.Data.Polls
-                           .AllActive()
+                           .All()
                            .Project()
                            .To<ViewModel>();
 
