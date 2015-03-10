@@ -1,0 +1,14 @@
+﻿@model VotingSystem.Web.ViewModels.Candidates.CandidateInputModel
+
+<section class="alert alert-dismissible alert-danger">
+    @Html.HiddenFor(c => c.Id)
+    @Html.EditorFor(m => m.IsChecked, new { htmlAttributes = new { @class = "hidden" } })
+    <div class="row">
+        <div class="col-md-4">
+            <h2>@Html.LabelFor(x => x.IsChecked, Model.Name, new { @class = "show" })</h2>
+        </div>
+        <div class="col-md-8">
+            <p >@Html.LabelFor(x => x.IsChecked, Model.Description, new { @class = "show standard-description" })</p>
+        </div>
+    </div>
+</section>

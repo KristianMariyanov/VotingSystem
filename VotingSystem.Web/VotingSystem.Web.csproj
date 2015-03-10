@@ -206,9 +206,11 @@
     <Compile Include="Areas\User\Controllers\ProfileController.cs" />
     <Compile Include="Areas\User\Controllers\VotesController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
-    <Compile Include="Areas\User\ViewModels\CandidateInputModel.cs" />
     <Compile Include="Areas\User\ViewModels\CandidateViewModel.cs" />
-    <Compile Include="Areas\User\ViewModels\VoteWithCandidatesInputModel.cs" />
+    <Compile Include="Areas\User\ViewModels\IdentificationCodeViewModel.cs" />
+    <Compile Include="Controllers\CandidatesController.cs" />
+    <Compile Include="ViewModels\Candidates\CandidateInputModel.cs" />
+    <Compile Include="ViewModels\Votes\VoteWithCandidatesInputModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserPollsViewModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserShowProfileViewModel.cs" />
     <Compile Include="Areas\User\ViewModels\UserVotesViewModel.cs" />
@@ -541,10 +543,10 @@
     <Content Include="Areas\User\Views\Profile\Show.cshtml" />
     <Content Include="Areas\User\Views\Polls\Show.cshtml" />
     <Content Include="Areas\User\Views\Votes\Show.cshtml" />
-    <Content Include="Areas\User\Views\Candidates\All.cshtml" />
+    <Content Include="Views\Candidates\All.cshtml" />
     <Content Include="Areas\User\Views\Candidates\Add.cshtml" />
-    <Content Include="Areas\User\Views\Votes\Vote.cshtml" />
-    <Content Include="Areas\User\Views\Shared\EditorTemplates\CandidateInputModel.cshtml" />
+    <Content Include="Views\Votes\Vote.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CandidateInputModel.cshtml" />
     <Content Include="Areas\User\Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Areas\User\Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Areas\User\Views\Shared\EditorTemplates\DateTime.cshtml" />

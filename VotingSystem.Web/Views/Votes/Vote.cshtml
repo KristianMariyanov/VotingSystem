@@ -1,0 +1,23 @@
+﻿@model VotingSystem.Web.ViewModels.Votes.VoteWithCandidatesInputModel
+@{
+    ViewBag.Title = "Vote";
+}
+
+<h1>@Model.Title</h1>
+<h2>You must vote for exactly <span id="count">@Model.NumberOfVotes</span> candidates</h2>
+
+@using (Html.BeginForm("Vote", "Votes", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id)
+    
+    @Html.EditorFor(c => c.Candidates)
+    <button id="submit" disabled="disabled" type="submit" class="btn btn-success btn-lg btn-block">
+        Submit
+    </button>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/checkbox")
+}
+
