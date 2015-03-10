@@ -4,10 +4,11 @@
 
     using VotingSystem.Models;
 
-    class AnswersRepository : GenericRepository<Answer>, IAnswersRepository
+    public class AnswersRepository : GenericRepository<Answer>, IAnswersRepository
     {
-        public AnswersRepository(IVotingSystemDbContext context) : base (context)
-        {        
+        public AnswersRepository(IVotingSystemDbContext context)
+            : base(context)
+        {
         }
 
         public IQueryable<Answer> AllByQuestion(int questionId)
@@ -19,6 +20,5 @@
         {
             return this.AllByQuestion(questionId).OrderBy(v => v.VoteCount);
         }
-
     }
 }

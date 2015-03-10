@@ -10,12 +10,10 @@
 
     public class VotingSystemDbContext : IdentityDbContext<User>, IVotingSystemDbContext
     {
-
         public VotingSystemDbContext()
             : base("VotingSystem", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VotingSystemDbContext, 
-            DefaultConfiguration>()); 
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VotingSystemDbContext, DefaultConfiguration>());
         }
 
         public IDbSet<Poll> Polls { get; set; }
@@ -39,21 +37,5 @@
         {
             return base.Set<T>();
         }
-
-        //public override int SaveChanges()
-        //{
-        //    try
-        //    {
-        //        return base.SaveChanges();
-        //    }
-        //    catch (DbUpdateException ex)
-        //    {
-        //        foreach (var exeption in ex.Entries)
-        //        {
-        //            throw;
-        //        }
-        //    }
-        //    return 1;
-        //}
     }
 }

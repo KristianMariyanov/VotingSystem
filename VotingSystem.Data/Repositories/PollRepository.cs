@@ -12,7 +12,6 @@
         {
         }
 
-
         public IQueryable<Poll> AllActive()
         {
             return this.context.Polls.Where(p => p.EndDate > DateTime.Now);

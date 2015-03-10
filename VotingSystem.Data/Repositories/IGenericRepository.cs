@@ -9,7 +9,8 @@
     {
         IQueryable<T> All();
 
-        IQueryable<T> Search(Expression<Func<T, bool>> conditions );
+        IQueryable<T> Search(Expression<Func<T, bool>> conditions);
+
         T GetById(object id);
 
         void Add(T entity);

@@ -34,43 +34,43 @@ namespace VotingSystem.Data.Migrations
             var questions = this.SeedQuestions(context, polls);
             this.SeedAnswers(context, questions);
             this.SeedCandidates(context, votes);
-
         }
 
         private void SeedCandidates(VotingSystemDbContext context, IList<Vote> votes)
         {
             foreach (var vote in votes)
             {
-                var candidates = new List<Candidate>() { 
-                    new Candidate()
-                        {
-                            Name = "Pesho",
-                            Description = "Vote for me",
-                            VoteCount = 0,
-                            Vote = vote
-                        },
-                        new Candidate()
-                        {
-                            Name = "Gosho Goshov",
-                            Description = "I'm the best",
-                            VoteCount = 0,
-                            Vote = vote
-                        },
-                        new Candidate()
-                        {
-                            Name = "Boiko Borisov",
-                            Description = "I'll buy you meatballs",
-                            VoteCount = 0,
-                            Vote = vote
-                        },
-                        new Candidate()
-                        {
-                            Name = "Georgi Purvanov",
-                            Description = "I'll set things right",
-                            VoteCount = 0,
-                            Vote = vote
-                        }
-                };
+                var candidates = new List<Candidate>()
+                                     {
+                                         new Candidate()
+                                             {
+                                                 Name = "Pesho",
+                                                 Description = "Vote for me",
+                                                 VoteCount = 0,
+                                                 Vote = vote
+                                             },
+                                         new Candidate()
+                                             {
+                                                 Name = "Gosho Goshov",
+                                                 Description = "I'm the best",
+                                                 VoteCount = 0,
+                                                 Vote = vote
+                                             },
+                                         new Candidate()
+                                             {
+                                                 Name = "Boiko Borisov",
+                                                 Description = "I'll buy you meatballs",
+                                                 VoteCount = 0,
+                                                 Vote = vote
+                                             },
+                                         new Candidate()
+                                             {
+                                                 Name = "Georgi Purvanov",
+                                                 Description = "I'll set things right",
+                                                 VoteCount = 0,
+                                                 Vote = vote
+                                             }
+                                     };
                 foreach (var candidate in candidates)
                 {
                     context.Candidates.AddOrUpdate(candidate);
@@ -78,33 +78,33 @@ namespace VotingSystem.Data.Migrations
 
                 context.SaveChanges();
             }
-            
         }
 
         private void SeedAnswers(VotingSystemDbContext context, IList<Question> questions)
         {
             foreach (var question in questions)
             {
-                var answers = new List<Answer>() { 
-                    new Answer()
-                        {
-                            AnswerText = "Yes",
-                            VoteCount = 0,
-                            Question = question
-                        },
-                        new Answer()
-                        {
-                            AnswerText = "No!",
-                            VoteCount = 0,
-                            Question = question
-                        },
-                        new Answer()
-                        {
-                            AnswerText = "Maybe",
-                            VoteCount = 0,
-                            Question = question
-                        }
-                };
+                var answers = new List<Answer>()
+                                  {
+                                      new Answer()
+                                          {
+                                              AnswerText = "Yes",
+                                              VoteCount = 0,
+                                              Question = question
+                                          },
+                                      new Answer()
+                                          {
+                                              AnswerText = "No!",
+                                              VoteCount = 0,
+                                              Question = question
+                                          },
+                                      new Answer()
+                                          {
+                                              AnswerText = "Maybe",
+                                              VoteCount = 0,
+                                              Question = question
+                                          }
+                                  };
                 foreach (var answer in answers)
                 {
                     context.Answers.AddOrUpdate(answer);
@@ -235,7 +235,6 @@ namespace VotingSystem.Data.Migrations
         private IList<Poll> SeedPolls(
            VotingSystemDbContext context, IList<User> users)
         {
-
             var polls = new List<Poll>
                             {
                                 new Poll()

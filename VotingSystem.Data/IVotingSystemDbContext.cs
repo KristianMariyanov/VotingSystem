@@ -7,7 +7,6 @@
 
     public interface IVotingSystemDbContext
     {
-
         IDbSet<Poll> Polls { get; set; }
 
         IDbSet<Vote> Votes { get; set; }

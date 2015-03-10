@@ -6,7 +6,7 @@
     using System.Linq;
     using System.Linq.Expressions;
     
-    class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected IVotingSystemDbContext context;
 
@@ -14,6 +14,7 @@
         {
             this.context = votingSystemDbContext;
         }
+
         public IQueryable<T> All()
         {
             return this.context.Set<T>();
@@ -67,7 +68,6 @@
 
             return entity;
         }
-
 
         public void SaveChanges()
         {

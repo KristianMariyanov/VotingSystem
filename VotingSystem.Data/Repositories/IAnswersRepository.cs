@@ -6,7 +6,6 @@
 
     public interface IAnswersRepository : IGenericRepository<Answer>
     {
-
         IQueryable<Answer> AllByQuestion(int questionId);
 
         IQueryable<Answer> AllInQuestionByVotesCount(int questionId);

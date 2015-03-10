@@ -5,8 +5,7 @@
 
     public interface IVotingSystemData
     {
-
-        IVotingSystemDbContext Context{ get; }
+        IVotingSystemDbContext Context { get; }
 
         IGenericRepository<User> Users { get; }
 
