@@ -10,7 +10,7 @@
       .Columns(columns =>
           {
               columns.Bound(col => col.Id);
-              columns.Bound(col => col.Title);
+              columns.Bound(col => col.Title).ClientTemplate(Html.ActionLink("#=Title#", "Moderate", "Candidates", new { Id = "#=Id#" }, null).ToHtmlString());
               columns.Bound(col => col.Author);
               columns.Bound(col => col.NumberOfVotes);
               columns.Bound(col => col.IsPublic);
