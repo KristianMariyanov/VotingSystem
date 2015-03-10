@@ -24,7 +24,7 @@
                     @foreach (var poll in Model.ActivePolls)
                     {
 
-                        <a href="@Url.Action("Details", "Polls", new { id = @poll.Id })" class="list-group-item">
+                        <a href="@Url.Action("Poll", "Polls", new { id = @poll.Id, Area = ""})" class="list-group-item">
                             <h5 class="list-group-item-heading">@poll.Title</h5>
                             <p class="list-group-item-text text-info">
                                 <small>Author: @poll.Author</small>
@@ -47,7 +47,7 @@
                     @foreach (var vote in Model.ActiveVotes)
                     {
 
-                        <a href="@Url.Action("Details", "Votes", new { id = @vote.Id })" class="list-group-item">
+                        <a href="@Url.Action("Vote", "Votes", new { id = @vote.Id, Area = ""})" class="list-group-item">
                             <h5 class="list-group-item-heading">@vote.Title</h5>
                             <p class="list-group-item-text text-info">
                                 <small>Author: @vote.Author</small>
