@@ -27,6 +27,7 @@
 
         public DateTime EndDate { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
         public string UserId { get; set; }
 
 
