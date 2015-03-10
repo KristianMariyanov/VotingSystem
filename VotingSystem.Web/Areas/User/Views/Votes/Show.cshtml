@@ -1,5 +1,4 @@
 ﻿@using VotingSystem.Web.Areas.User.ViewModels
-@using VotingSystem.Web.Infrastructure.Helpers
 
 @{
     const string ControllerName = "Votes";
@@ -13,6 +12,9 @@
               columns.Bound(col => col.Id);
               columns.Bound(col => col.Title);
               columns.Bound(col => col.Author);
+              columns.Bound(col => col.NumberOfVotes);
+              columns.Bound(col => col.IsPublic);
+              columns.Bound(col => col.Voters).Hidden();
               columns.Bound(col => col.EndDate).Format("{0:dd/MM/yyyy HH:mm}");
               columns.Bound(col => col.Description);
               columns.Command(command => command.Edit().Text(" ").UpdateText("Запазване").CancelText("Отказ")).Width(80);
@@ -34,6 +36,7 @@
                 .Filterable(x => x.Enabled(true))
                 .Reorderable(x => x.Columns(true))
                 .Resizable(x => x.Columns(true))
+                .Events(x => x.Edit("onEdit"))
                 .DataSource(datasource => datasource
                     .Ajax()
                     .ServerOperation(true)
@@ -50,12 +53,22 @@
 @section scripts{
     @Scripts.Render("~/bundles/jqueryajax")
     <script type="text/javascript">
+        function onEdit(ev) {
+            if (ev.model.isNew()) {
+                $("#Voters").prop('disabled', false);
+            }
+
+            $('#IsPublic').change(function() {
+                $("#Voters").prop('disabled', function(i, v) { return !v; });
+            });
+        }
+
         function errorHandler(e) {
             if (e.errors) {
                 var message = "Errors:\n";
-                $.each(e.errors, function (key, value) {
+                $.each(e.errors, function(key, value) {
                     if ('errors' in value) {
-                        $.each(value.errors, function () {
+                        $.each(value.errors, function() {
                             message += this + "\n";
                         });
                     }
