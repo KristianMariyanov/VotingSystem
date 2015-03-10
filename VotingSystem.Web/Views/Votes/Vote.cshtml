@@ -10,11 +10,11 @@
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.IdentificationCode)
     
+
     @Html.EditorFor(c => c.Candidates)
-    <button id="submit" disabled="disabled" type="submit" class="btn btn-success btn-lg btn-block">
-        Submit
-    </button>
+    <input id="submit" type="submit" value="Submit"class="btn btn-success btn-lg btn-block"/>
 }
 
 @section scripts {
