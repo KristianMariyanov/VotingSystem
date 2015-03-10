@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace VotingSystem.Web.Areas.User.Controllers
+﻿namespace VotingSystem.Web.Areas.User.Controllers
 {
+    using System.Linq;
+    using System.Web.Mvc;
+
     using AutoMapper;
     using AutoMapper.QueryableExtensions;
 
     using VotingSystem.Data;
     using VotingSystem.Models;
     using VotingSystem.Web.Areas.User.ViewModels;
+    using VotingSystem.Web.ViewModels.Candidates;
+    using VotingSystem.Web.ViewModels.Votes;
 
     public class CandidatesController : UserBaseController
     {
@@ -22,11 +21,11 @@ namespace VotingSystem.Web.Areas.User.Controllers
         }
 
         [HttpGet]
-        public ActionResult All(int Id)
+        public ActionResult All(int id)
         {
             var candidates = this.Data
                 .Candidates
-                .AllByVote(Id)
+                .AllByVote(id)
                 .Project()
                 .To<CandidateViewModel>()
                 .ToList();
@@ -34,10 +33,29 @@ namespace VotingSystem.Web.Areas.User.Controllers
             return this.View(candidates);
         }
 
-        [HttpGet]
-        public ActionResult Add(int Id)
+        public ActionResult Moderate(int id)
         {
-            var candidateModel = new CandidateViewModel() { VoteId = Id };
+            var currentVote = this.Data.Votes.GetById(id);
+
+            var voteInfo = new VoteWithCandidatesInputModel()
+                                 {
+                                     Id = currentVote.Id,
+                                     Title = currentVote.Title,
+                                     NumberOfVotes = currentVote.NumberOfVotes,
+                                     Candidates =
+                                         this.Data.Candidates.AllByVote(currentVote.Id)
+                                         .Project()
+                                         .To<CandidateInputModel>()
+                                 };
+
+
+            return this.View(voteInfo);
+        }
+
+        [HttpGet]
+        public ActionResult Add(int id)
+        {
+            var candidateModel = new CandidateViewModel() { VoteId = id };
             return this.View(candidateModel);
         }
 
@@ -50,7 +68,6 @@ namespace VotingSystem.Web.Areas.User.Controllers
             {
                 candidate.VoteCount = 0;
                 var candidateToDb = Mapper.DynamicMap<Candidate>(candidate);
-
 
                 this.Data.Candidates.Add(candidateToDb);
                 this.Data.SaveChanges();
