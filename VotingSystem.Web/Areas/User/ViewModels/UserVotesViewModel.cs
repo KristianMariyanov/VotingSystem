@@ -19,7 +19,11 @@
         [HiddenInput(DisplayValue = false)]
         public string Author { get; set; }
 
+        public int NumberOfVotes { get; set; }
+
         public bool IsPublic { get; set; }
+
+        public int Voters { get; set; }
 
         public DateTime StartDate { get; set; }
 
