@@ -27,7 +27,7 @@
                 .To<PublicActivePollsViewModel>()
                 .ToList();
 
-            return View(polls);
+            return this.View(polls);
         }
 
         public ActionResult Details(int Id)
