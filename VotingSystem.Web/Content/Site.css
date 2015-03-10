@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.standard-description {
+
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    display: block;
+}
+.standard-description {
+
+    white-space:pre-line;
+
+}
