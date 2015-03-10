@@ -5,13 +5,15 @@
 
     public class IdentificationCode
     {
-
         public IdentificationCode()
         {
-            this.Id = Guid.NewGuid();
+            this.Id = Guid.NewGuid().ToString();
         }
+
         [Key]
-        public Guid Id { get; set; }
+        [Required]
+        [MaxLength(256)]
+        public string Id { get; set; }
 
         public int? PollId { get; set; }
 

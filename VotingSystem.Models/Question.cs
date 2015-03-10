@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-namespace VotingSystem.Models
+﻿namespace VotingSystem.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Question
     {

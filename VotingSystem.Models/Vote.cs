@@ -42,8 +42,6 @@
 
         public virtual User User { get; set; }
 
-
-
         public virtual ICollection<IdentificationCode> IdentificationCodes
         {
             get { return this.identificationCodes; }

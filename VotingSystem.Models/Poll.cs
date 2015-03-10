@@ -1,6 +1,4 @@
-﻿
-
-namespace VotingSystem.Models
+﻿namespace VotingSystem.Models
 {
     using System;
     using System.Collections.Generic;
@@ -40,8 +38,6 @@ namespace VotingSystem.Models
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
-
-
 
         public virtual ICollection<IdentificationCode> IdentificationCodes
         {
