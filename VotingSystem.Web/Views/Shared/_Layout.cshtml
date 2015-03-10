@@ -33,6 +33,27 @@
             </div>
         </div>
     </div>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-box">
+            <div class="alert alert-danger alert-error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong>
+                @TempData["Error"]
+            </div>
+        </div>
+    }
+    
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert-box">
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong>
+                @TempData["Error"]
+            </div>
+        </div>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />
