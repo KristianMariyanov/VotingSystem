@@ -1,11 +1,17 @@
 ﻿namespace VotingSystem.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     public class IdentificationCode
     {
+
+        public IdentificationCode()
+        {
+            this.Id = Guid.NewGuid();
+        }
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public int? PollId { get; set; }
 
