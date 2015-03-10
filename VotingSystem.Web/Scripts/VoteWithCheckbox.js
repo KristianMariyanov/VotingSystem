@@ -12,12 +12,3 @@
         $('#submit').attr('disabled', 'disabled');
     }
 });
-
-//$('input[type=checkbox]').on('change', function () {
-//    if ($('input[type=checkbox]:checked').length > parseInt($('#count').text())) {
-//        $(this).prop('checked', false);
-//    }
-//    if ($('input[type=checkbox]:checked').length == parseInt($('#count').text())) {
-//        $('#submit').show();
-//    }
-//});
