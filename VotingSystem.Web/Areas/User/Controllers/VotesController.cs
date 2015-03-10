@@ -1,5 +1,6 @@
 ﻿namespace VotingSystem.Web.Areas.User.Controllers
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
@@ -19,7 +20,6 @@
 
     public class VotesController : KendoGridAdministrationController
     {
-        // GET: User/Votes
         public VotesController(IVotingSystemData data)
             : base(data)
         {
@@ -27,45 +27,6 @@
 
         public ActionResult Show()
         {
-            return this.View();
-        }
-
-        [HttpGet]
-        public ActionResult Vote(int Id)
-        {
-            var voteWithCandidates = new VoteWithCandidatesInputModel()
-                                 {
-                                     Title = this.Data.Votes.TitleById(Id),
-                                     Candidates =
-                                         this.Data.Candidates.AllByVote(Id)
-                                         .Project()
-                                         .To<CandidateInputModel>()
-                                 };
-            return this.View(voteWithCandidates);
-        }
-
-        [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult Vote(VoteWithCandidatesInputModel model)
-        {
-            if (model != null && this.ModelState.IsValid) { 
-                foreach (var candidate in model.Candidates)
-                {
-                    if (candidate.IsChecked)
-                    {
-                        var currentCandidate = this.Data.Candidates.GetById(candidate.Id);
-                        currentCandidate.VoteCount++;
-
-                        this.Data.Candidates.Update(currentCandidate);
-                        this.Data.SaveChanges();
-
-                    }
-                }
-
-                this.RedirectToAction("All", new { id = model.Id });
-            }
-
             return this.View();
         }
 
@@ -79,6 +40,21 @@
             {
                 model.Id = modelToDb.Id;
                 model.Author = modelToDb.User.UserName;
+            }
+
+            if (!model.IsPublic)
+            {
+                for (int i = 0; i < model.Voters; i++)
+                {
+                    var code = new VoteIdentificationCodeViewModel()
+                    {
+                        VoteId = model.Id
+                    };
+                    var codeToDb = Mapper.DynamicMap<IdentificationCode>(code);
+
+                    this.Data.IdentificatonCodes.Add(codeToDb);
+                    this.Data.SaveChanges();
+                }
             }
 
             return this.GridOperation(model, request);
