@@ -8,6 +8,7 @@
     using VotingSystem.Data;
     using VotingSystem.Models;
 
+    [Authorize]
     public abstract class UserBaseController : Controller
     {
         public UserBaseController(IVotingSystemData data)
@@ -15,11 +16,9 @@
             this.Data = data;
         }
 
-        protected  User CurrentUser { get; set; }
+        protected User CurrentUser { get; set; }
 
         protected IVotingSystemData Data { get; set; }
-
-
 
         protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {
