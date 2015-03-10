@@ -34,3 +34,7 @@ textarea {
     white-space:pre-line;
 
 }
+
+.alert-box {
+    margin: 20px;
+}
