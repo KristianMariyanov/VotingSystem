@@ -1,0 +1,25 @@
+﻿@model VotingSystem.Web.ViewModels.Votes.VoteWithCandidatesInputModel
+@{
+    ViewBag.Title = "Moderate";
+}
+
+<div class="container">
+    <div class="row">
+        @Html.ActionLink("Add New Candidate", "Add", new { id = Model.Id}, new { @class = "btn btn-primary btn-lg btn-block" })
+    </div>
+</div>
+
+@foreach (var candidate in Model.Candidates)
+{
+    <div class="well">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>@candidate.Name</h2>
+            </div>
+            <div class="col-md-8">
+                <p>@candidate.Description</p>
+            </div>
+        </div>
+    </div>
+}
+
