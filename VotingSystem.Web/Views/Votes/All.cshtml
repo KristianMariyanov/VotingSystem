@@ -12,7 +12,9 @@
     .Columns(col =>
         {
             col.Bound(poll => poll.Id).Hidden();
-            col.Bound(poll => poll.Title);
+            col.Bound(poll => poll.Title).Template(@<text>
+                <strong> <a href="/Votes/Details/@item.Id">@item.Title</a></strong>
+            </text>);
             col.Bound(poll => poll.Description);
             col.Bound(poll => poll.Author);
             col.Bound(poll => poll.StartDate);

@@ -13,9 +13,8 @@
         {
             col.Bound(poll => poll.Id).Hidden();
             col.Bound(p => p.Title).Template(@<text>
-               <strong> <a href="/Polls/All/@item.Id">@item.Title</a></strong>
+               <strong> <a href="/Polls/Details/@item.Id">@item.Title</a></strong>
             </text>);
-            col.Bound(poll => poll.Title);
             col.Bound(poll => poll.Description);
             col.Bound(poll => poll.Author);
             col.Bound(poll => poll.StartDate);
