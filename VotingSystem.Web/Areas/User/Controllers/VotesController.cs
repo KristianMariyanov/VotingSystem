@@ -89,7 +89,7 @@
 
         protected override IEnumerable GetData()
         {
-            var data = this.Data.Votes.All().Project().To<ViewModel>();
+            var data = this.Data.Votes.All().Where(x => x.UserId == this.CurrentUser.Id).Project().To<ViewModel>();
 
             return data;
         }

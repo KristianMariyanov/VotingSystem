@@ -29,3 +29,11 @@
         </div>
     </form>
 }
+
+@section Scripts {
+    <script>
+        var inputs = $('input, textarea, select')
+            .not(':input[type=submit]')
+            .prop('disabled', true);
+    </script>
+}
