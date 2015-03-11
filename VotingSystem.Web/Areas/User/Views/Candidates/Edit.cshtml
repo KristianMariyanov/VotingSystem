@@ -1,16 +1,14 @@
 ﻿@model VotingSystem.Web.Areas.User.ViewModels.CandidateViewModel
 @{
-    ViewBag.Title = "Delete candidate";
+    ViewBag.Title = "Edit Candidate";
 }
 
-
-@using (Html.BeginForm("Delete", "Candidates", FormMethod.Post))
+@using (Html.BeginForm("Edit", "Candidates", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(x => x.Id);
     @Html.HiddenFor(x => x.VoteId)
     <form class="form-horizontal">
-
         <div class="form-group">
             @Html.LabelFor(x => x.Name, new { @class = "col-lg-2 control-label" })
             <div class="col-lg-10">
@@ -30,10 +28,3 @@
     </form>
 }
 
-@section Scripts {
-    <script>
-        var inputs = $('input, textarea, select')
-            .not(':input[type=submit]')
-            .prop('disabled', true);
-    </script>
-}

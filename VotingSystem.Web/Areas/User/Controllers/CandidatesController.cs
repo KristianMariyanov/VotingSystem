@@ -64,21 +64,58 @@
             return this.View(model);
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var candidateToDb = this.Data.Candidates.GetById(id);
+
+            var candidate = Mapper.Map<CandidateViewModel>(candidateToDb);
+
+            if (candidateToDb.Vote.UserId != this.CurrentUser.Id)
+            {
+                this.TempData["Error"] = "You can not change candidates this vote";
+                return this.RedirectToAction("Show", "Votes");
+            }
+
+            return this.View(candidate);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(CandidateViewModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                var candidateInDb = this.Data.Candidates.GetById(model.Id);
+                if (candidateInDb != null)
+                {
+                    candidateInDb.Name = model.Name;
+                    candidateInDb.Description = model.Description;
+                }
+
+                this.Data.Candidates.Update(candidateInDb);
+                this.Data.SaveChanges();
+                this.TempData["Success"] = "You successfully edited a candiidate " + model.Name;
+                return this.RedirectToAction("Moderate", "Candidates", new { id = model.VoteId });
+            }
+
+            return this.View(model);
+        }
+
         public ActionResult Moderate(int id)
         {
             var currentVote = this.Data.Votes.GetById(id);
 
-            var voteInfo = new VoteWithCandidatesInputModel()
-                                 {
-                                     Id = currentVote.Id,
-                                     Title = currentVote.Title,
-                                     NumberOfVotes = currentVote.NumberOfVotes,
-                                     Candidates =
-                                         this.Data.Candidates.AllByVote(currentVote.Id)
-                                         .Project()
-                                         .To<CandidateInputModel>()
-                                 };
-
+            var voteInfo = new VoteWithCandidatesInputModel
+                               {
+                                   Id = currentVote.Id,
+                                   Title = currentVote.Title,
+                                   NumberOfVotes = currentVote.NumberOfVotes,
+                                   Candidates =
+                                       this.Data.Candidates.AllByVote(currentVote.Id)
+                                       .Project()
+                                       .To<CandidateInputModel>()
+                               };
 
             return this.View(voteInfo);
         }
@@ -86,7 +123,7 @@
         [HttpGet]
         public ActionResult Add(int id)
         {
-            var candidateModel = new CandidateViewModel() { VoteId = id };
+            var candidateModel = new CandidateViewModel { VoteId = id };
             return this.View(candidateModel);
         }
 
