@@ -12,5 +12,10 @@
         }
 
         protected IVotingSystemData Data { get; set; }
+
+        protected override HttpNotFoundResult HttpNotFound(string statusDescription)
+        {
+            return base.HttpNotFound(statusDescription);
+        }
     }
 }
