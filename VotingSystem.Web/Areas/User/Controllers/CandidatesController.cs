@@ -33,6 +33,37 @@
             return this.View(candidates);
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var candidateToDb = this.Data.Candidates.GetById(id);
+
+            var candidate = Mapper.Map<CandidateViewModel>(candidateToDb);
+
+            if (candidateToDb.Vote.UserId != this.CurrentUser.Id)
+            {
+                this.TempData["Error"] = "You can not change candidates this vote";
+                return this.RedirectToAction("Show", "Votes");
+            }
+
+            return this.View(candidate);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(CandidateViewModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.Data.Candidates.DeleteById(model.Id);
+                this.Data.SaveChanges();
+                this.TempData["Success"] = "You successfully deleted a candiidate " + model.Name;
+                return this.RedirectToAction("Moderate", "Candidates", new { id = model.VoteId });
+            }
+
+            return this.View(model);
+        }
+
         public ActionResult Moderate(int id)
         {
             var currentVote = this.Data.Votes.GetById(id);

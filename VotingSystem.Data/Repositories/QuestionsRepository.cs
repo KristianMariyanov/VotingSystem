@@ -14,7 +14,7 @@
 
         public IQueryable<Question> AllAnswersByPoll(int pollId)
         {
-            return this.context.Question.Where(q => q.PollId == pollId);
+            return this.Context.Question.Where(q => q.PollId == pollId);
         }
     }
 }

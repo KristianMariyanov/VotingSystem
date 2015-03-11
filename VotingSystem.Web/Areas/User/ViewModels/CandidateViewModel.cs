@@ -22,7 +22,6 @@
         [MaxLength(50)]
         public string Description { get; set; }
 
-        [Required]
         [HiddenInput(DisplayValue = false)]
         public int VoteCount { get; set; }
 

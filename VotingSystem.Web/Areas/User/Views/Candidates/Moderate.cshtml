@@ -16,8 +16,12 @@
             <div class="col-md-4">
                 <h2>@candidate.Name</h2>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <p>@candidate.Description</p>
+            </div>
+            <div class="col-md-2">
+                @Html.ActionLink("Edit", "Edit", new { id = candidate.Id }, new { @class = "btn btn-primary text-center" })
+                @Html.ActionLink("Delete", "Delete", new { id = candidate.Id }, new { @class = "btn btn-primary text-center" })
             </div>
         </div>
     </div>

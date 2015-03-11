@@ -14,12 +14,12 @@
 
         public IQueryable<Poll> AllActive()
         {
-            return this.context.Polls.Where(p => p.EndDate > DateTime.Now);
+            return this.Context.Polls.Where(p => p.EndDate > DateTime.Now);
         }
 
         public IQueryable<Poll> AllByUser(string userId)
         {
-            return this.context.Polls.Where(p => p.UserId == userId);
+            return this.Context.Polls.Where(p => p.UserId == userId);
         }
     }
 }

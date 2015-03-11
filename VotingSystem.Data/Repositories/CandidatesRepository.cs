@@ -13,7 +13,7 @@
 
         public IQueryable<Candidate> AllByVote(int voteId)
         {
-            return this.context.Candidates.Where(c => c.VoteId == voteId);
+            return this.Context.Candidates.Where(c => c.VoteId == voteId);
         }
 
         public IQueryable<Candidate> AllInVoteByVotesCount(int voteId)

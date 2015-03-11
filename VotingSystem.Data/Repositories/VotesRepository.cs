@@ -15,17 +15,17 @@
 
         public string TitleById(int id)
         {
-            return this.context.Votes.Where(i => i.Id == id).Select(t => t.Title).FirstOrDefault();
+            return this.Context.Votes.Where(i => i.Id == id).Select(t => t.Title).FirstOrDefault();
         }
 
         public IQueryable<Vote> AllActive()
         {
-            return this.context.Votes.Where(v => v.EndDate > DateTime.Now && v.IsPublic);
+            return this.Context.Votes.Where(v => v.EndDate > DateTime.Now && v.IsPublic);
         }
 
         public IQueryable<Vote> AllByUser(string userId)
         {
-            return this.context.Votes.Where(v => v.UserId == userId);
+            return this.Context.Votes.Where(v => v.UserId == userId);
         }
     }
 }

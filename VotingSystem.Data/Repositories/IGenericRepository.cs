@@ -19,6 +19,8 @@
 
         void Update(T entity);
 
+        void DeleteById(object id);
+
         void SaveChanges();
     }
 }

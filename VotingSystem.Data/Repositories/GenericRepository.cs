@@ -8,16 +8,16 @@
     
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected IVotingSystemDbContext context;
+        protected readonly IVotingSystemDbContext Context;
 
         public GenericRepository(IVotingSystemDbContext votingSystemDbContext)
         {
-            this.context = votingSystemDbContext;
+            this.Context = votingSystemDbContext;
         }
 
         public IQueryable<T> All()
         {
-            return this.context.Set<T>();
+            return this.Context.Set<T>();
         }
 
         public IQueryable<T> Search(Expression<Func<T, bool>> conditions)
@@ -27,28 +27,28 @@
 
         public T GetById(object id)
         {
-            return this.context.Set<T>().Find(id);
+            return this.Context.Set<T>().Find(id);
         }
 
         public void Add(T entity)
         {
-            DbEntityEntry entry = this.context.Entry(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State != EntityState.Detached)
             {
                 entry.State = EntityState.Added;
             }
             else
             {
-                this.context.Set<T>().Add(entity);
+                this.Context.Set<T>().Add(entity);
             }
         }
 
         public void Update(T entity)
         {
-            DbEntityEntry entry = this.context.Entry(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State == EntityState.Detached)
             {
-                this.context.Set<T>().Attach(entity);
+                this.Context.Set<T>().Attach(entity);
             }
 
             entry.State = EntityState.Modified;
@@ -56,22 +56,32 @@
 
         public T Delete(T entity)
         {
-            DbEntityEntry entry = this.context.Entry(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             if (entry.State != EntityState.Deleted)
             {
                 entry.State = EntityState.Deleted;
             }
             else
             {
-                this.context.Set<T>().Remove(entity);
+                this.Context.Set<T>().Remove(entity);
             }
 
             return entity;
         }
 
+        public void DeleteById(object id)
+        {
+            var entity = this.GetById(id);
+
+            if (entity != null)
+            {
+                this.Delete(entity);
+            }
+        }
+
         public void SaveChanges()
         {
-            this.context.SaveChanges();
+            this.Context.SaveChanges();
         }
     }
 }

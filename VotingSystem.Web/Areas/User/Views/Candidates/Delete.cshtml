@@ -1,0 +1,31 @@
+﻿@model VotingSystem.Web.Areas.User.ViewModels.CandidateViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+@using (Html.BeginForm("Delete", "Candidates", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id);
+    @Html.HiddenFor(x => x.VoteId)
+    <form class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.EditorFor(x => x.Name, new { @class = "form-control" })
+            </div>
+            @Html.LabelFor(x => x.Description, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <a href="@Url.Action("Moderate", new{Id = Model.VoteId})" class="btn btn-default">Cancel</a>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+}
